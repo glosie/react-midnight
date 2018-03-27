@@ -1,13 +1,13 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("React"));
+		module.exports = factory(require("React"), require("PropTypes"));
 	else if(typeof define === 'function' && define.amd)
-		define(["React"], factory);
+		define(["React", "PropTypes"], factory);
 	else if(typeof exports === 'object')
-		exports["ReactMidnight"] = factory(require("React"));
+		exports["ReactMidnight"] = factory(require("React"), require("PropTypes"));
 	else
-		root["ReactMidnight"] = factory(root["React"]);
-})(this, function(__WEBPACK_EXTERNAL_MODULE_2__) {
+		root["ReactMidnight"] = factory(root["React"], root["PropTypes"]);
+})(this, function(__WEBPACK_EXTERNAL_MODULE_2__, __WEBPACK_EXTERNAL_MODULE_3__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -52,7 +52,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	// Thanks to the following libraries for the inspiration
 	// https://github.com/gpbl/react-day-picker
@@ -74,39 +74,39 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	exports.withCalendar = _decoratorsWithCalendar2['default'];
 
-	var _decoratorsWithCalendarProps = __webpack_require__(6);
+	var _decoratorsWithCalendarProps = __webpack_require__(7);
 
 	var _decoratorsWithCalendarProps2 = _interopRequireDefault(_decoratorsWithCalendarProps);
 
 	exports.withCalendarProps = _decoratorsWithCalendarProps2['default'];
 
-	var _decoratorsWithDayProps = __webpack_require__(7);
+	var _decoratorsWithDayProps = __webpack_require__(8);
 
 	var _decoratorsWithDayProps2 = _interopRequireDefault(_decoratorsWithDayProps);
 
 	exports.withDayProps = _decoratorsWithDayProps2['default'];
 
-	var _addons2 = __webpack_require__(8);
+	var _addons2 = __webpack_require__(9);
 
 	var _addons = _interopRequireWildcard(_addons2);
 
 	exports.addons = _addons;
 
-	var _Time2 = __webpack_require__(16);
+	var _Time2 = __webpack_require__(17);
 
 	var _Time3 = _interopRequireDefault(_Time2);
 
 	exports.Time = _Time3['default'];
 
-	var _utils2 = __webpack_require__(5);
+	var _utils2 = __webpack_require__(6);
 
 	var _utils3 = _interopRequireDefault(_utils2);
 
 	exports.utils = _utils3['default'];
 
-/***/ },
+/***/ }),
 /* 1 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -132,15 +132,19 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _contextTypes = __webpack_require__(3);
+	var _propTypes = __webpack_require__(3);
+
+	var _propTypes2 = _interopRequireDefault(_propTypes);
+
+	var _contextTypes = __webpack_require__(4);
 
 	var _contextTypes2 = _interopRequireDefault(_contextTypes);
 
-	var _generateId = __webpack_require__(4);
+	var _generateId = __webpack_require__(5);
 
 	var _generateId2 = _interopRequireDefault(_generateId);
 
-	var _utils = __webpack_require__(5);
+	var _utils = __webpack_require__(6);
 
 	var WEEKDAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
@@ -294,15 +298,21 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	module.exports = exports['default'];
 
-/***/ },
+/***/ }),
 /* 2 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	module.exports = __WEBPACK_EXTERNAL_MODULE_2__;
 
-/***/ },
+/***/ }),
 /* 3 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
+
+	module.exports = __WEBPACK_EXTERNAL_MODULE_3__;
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -310,30 +320,34 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 
-	var _react = __webpack_require__(2);
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	var _propTypes = __webpack_require__(3);
+
+	var _propTypes2 = _interopRequireDefault(_propTypes);
 
 	exports['default'] = {
-	  id: _react.PropTypes.string,
-	  date: _react.PropTypes.instanceOf(Date),
-	  weeks: _react.PropTypes.array,
-	  weekdays: _react.PropTypes.array,
-	  monthLabel: _react.PropTypes.string,
-	  yearLabel: _react.PropTypes.number,
-	  minDay: _react.PropTypes.instanceOf(Date),
-	  maxDay: _react.PropTypes.instanceOf(Date),
-	  rules: _react.PropTypes.objectOf(_react.PropTypes.func),
-	  disabledRules: _react.PropTypes.objectOf(_react.PropTypes.func),
-	  dayEvents: _react.PropTypes.objectOf(_react.PropTypes.func),
-	  renderDay: _react.PropTypes.func,
-	  setDate: _react.PropTypes.func,
-	  navigateWeek: _react.PropTypes.func,
-	  navigateMonth: _react.PropTypes.func
+	  id: _propTypes2['default'].string,
+	  date: _propTypes2['default'].instanceOf(Date),
+	  weeks: _propTypes2['default'].array,
+	  weekdays: _propTypes2['default'].array,
+	  monthLabel: _propTypes2['default'].string,
+	  yearLabel: _propTypes2['default'].number,
+	  minDay: _propTypes2['default'].instanceOf(Date),
+	  maxDay: _propTypes2['default'].instanceOf(Date),
+	  rules: _propTypes2['default'].objectOf(_propTypes2['default'].func),
+	  disabledRules: _propTypes2['default'].objectOf(_propTypes2['default'].func),
+	  dayEvents: _propTypes2['default'].objectOf(_propTypes2['default'].func),
+	  renderDay: _propTypes2['default'].func,
+	  setDate: _propTypes2['default'].func,
+	  navigateWeek: _propTypes2['default'].func,
+	  navigateMonth: _propTypes2['default'].func
 	};
 	module.exports = exports['default'];
 
-/***/ },
-/* 4 */
-/***/ function(module, exports) {
+/***/ }),
+/* 5 */
+/***/ (function(module, exports) {
 
 	'use strict';
 
@@ -360,9 +374,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	module.exports = exports['default'];
 
-/***/ },
-/* 5 */
-/***/ function(module, exports) {
+/***/ }),
+/* 6 */
+/***/ (function(module, exports) {
 
 	'use strict';
 
@@ -373,23 +387,30 @@ return /******/ (function(modules) { // webpackBootstrap
 	var DAYS_IN_WEEK = 7;
 
 	var utils = {
+	  // Make a new Date pointing to the same time as `d`
 	  clone: function clone(d) {
 	    return new Date(d.getTime());
 	  },
 
+	  // Make a new date pointing to the first day of `d`'s month
 	  getFirstDayOfMonth: function getFirstDayOfMonth(d) {
 	    return new Date(d.getFullYear(), d.getMonth(), 1);
 	  },
 
+	  // Return the number of days in `d`'s month
 	  getDaysInMonth: function getDaysInMonth(d) {
 	    var resultDate = utils.getFirstDayOfMonth(d);
 
+	    // Bump it to the next month, then remove a day
+	    // so that it's on the last day of its original month
 	    resultDate.setMonth(resultDate.getMonth() + 1);
 	    resultDate.setDate(resultDate.getDate() - 1);
 
 	    return resultDate.getDate();
 	  },
 
+	  // Return an array of Dates, with one date
+	  // for each day in `d`'s month
 	  getDays: function getDays(d) {
 	    var daysInMonth = utils.getDaysInMonth(d);
 	    var days = [];
@@ -402,6 +423,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return days;
 	  },
 
+	  // Get a two-dimensional array of Dates for `d`'s month.
+	  // Each inner array is one week.
+	  // Extra days will be added from other months to make each week complete.
+	  // Pass `0-7` as `firstDayOfWeek` to specify when weeks should begin (values correspond to `Date.getDay()`).
+	  // Pass `true` to `forceSixRows` to make sure each month gets six rows (this is for UI consistency).
 	  getWeeks: function getWeeks(d) {
 	    var firstDayOfWeek = arguments.length <= 1 || arguments[1] === undefined ? 0 : arguments[1];
 	    var forceSixRows = arguments.length <= 2 || arguments[2] === undefined ? false : arguments[2];
@@ -473,18 +499,24 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return weeks;
 	  },
 
+	  // Return a new date which is `direction` months away from `d`
+	  // (negative `direction` returns a date towards the past)
 	  navigateMonth: function navigateMonth(d, direction) {
 	    var currMonth = utils.clone(d);
 	    var newMonth = currMonth.setMonth(d.getMonth() + direction, 1);
 	    return new Date(newMonth);
 	  },
 
+	  // Return a new date which is `7 * direction` days away from `d`
+	  // (negative `direction` returns a date towards the past)
 	  navigateWeek: function navigateWeek(d, direction) {
 	    var currWeek = utils.clone(d);
 	    var newWeek = currWeek.setDate(d.getDate() + 7 * direction);
 	    return new Date(newWeek);
 	  },
 
+	  // Compare `d1` & `d2` with varying degrees of specificity: `"day"`, `"month"` or `"year"`
+	  // If `d2` is an array of dates, return true if _any_ dates match `d1`
 	  isSame: function isSame(d1, d2) {
 	    var type = arguments.length <= 2 || arguments[2] === undefined ? 'day' : arguments[2];
 
@@ -516,22 +548,27 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	  },
 
+	  // `true` if `d1` is before the beginning of `d2`'s day
 	  isBeforeDay: function isBeforeDay(d1, d2) {
 	    d2 = utils.clone(d2);
 	    d2.setHours(0, 0, 0, 0);
 	    return d1 < d2;
 	  },
 
+	  // `true` if `d1` is after the beginning of `d2`'s day
 	  isAfterDay: function isAfterDay(d1, d2) {
 	    d2 = utils.clone(d2);
 	    d2.setHours(0, 0, 0, 0);
 	    return d1 > d2;
 	  },
 
+	  // `true` if d1 is in a different month than d2
 	  isOutsideMonth: function isOutsideMonth(d1, d2) {
 	    return d1.getMonth() !== d2.getMonth();
 	  },
 
+	  // Return an array of dates between `startDate` and `endDate`
+	  // The array will be ascending
 	  getDaysBetween: function getDaysBetween(startDate, endDate) {
 	    // swap values if start date is after end date
 	    if (utils.isAfterDay(startDate, endDate)) {
@@ -550,24 +587,31 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    while (current <= endDate) {
 	      days.push(current);
-	      current = new Date(current.getTime() + 24 * 60 * 60 * 1000);
+	      // Clone it to avoid side effects, then increment the date by 1
+	      current = new Date(current.getTime());
+	      current.setDate(current.getDate() + 1);
 	    }
 
 	    return days;
 	  },
 
+	  // zero-indexed array of month names
+	  // eg, `getMonths()[0] // "January"`
 	  getMonths: function getMonths() {
 	    return MONTHS;
 	  },
 
+	  // Get the month name for `d`'s month
 	  formatMonth: function formatMonth(d) {
 	    return '' + MONTHS[d.getMonth()];
 	  },
 
+	  // Get 4-digit year from `d`
 	  formatYear: function formatYear(d) {
 	    return d.getFullYear();
 	  },
 
+	  // Make a new date comprised of day(date) + minutes
 	  addMinutesToDay: function addMinutesToDay(date, minutes) {
 	    // default to today's date
 	    date = date || new Date();
@@ -580,6 +624,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  getMinutesFromDay: function getMinutesFromDay(date) {},
 
+	  // Returns hyphenized keys from `rules` where its tests return true
+	  // - `rules`: modifier-test pairs where:
+	  //   - `test` will be called with `test(day, month)` for each calendar day
+	  //   - `modifier` will be hyphenized into a class name if `test(day, month)` returns true
 	  getModifiers: function getModifiers(rules, day, month) {
 	    var modifiers = [];
 
@@ -600,9 +648,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports['default'] = utils;
 	module.exports = exports['default'];
 
-/***/ },
-/* 6 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -628,7 +676,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _contextTypes = __webpack_require__(3);
+	var _propTypes = __webpack_require__(3);
+
+	var _propTypes2 = _interopRequireDefault(_propTypes);
+
+	var _contextTypes = __webpack_require__(4);
 
 	var _contextTypes2 = _interopRequireDefault(_contextTypes);
 
@@ -665,9 +717,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	module.exports = exports['default'];
 
-/***/ },
-/* 7 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -693,11 +745,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _contextTypes = __webpack_require__(3);
+	var _contextTypes = __webpack_require__(4);
 
 	var _contextTypes2 = _interopRequireDefault(_contextTypes);
 
-	var _utils = __webpack_require__(5);
+	var _utils = __webpack_require__(6);
 
 	function withDayProps(DayComponent) {
 	  var className = arguments.length <= 1 || arguments[1] === undefined ? 'cal-day' : arguments[1];
@@ -799,9 +851,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	module.exports = exports['default'];
 
-/***/ },
-/* 8 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -811,51 +863,51 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _Header2 = __webpack_require__(9);
+	var _Header2 = __webpack_require__(10);
 
 	var _Header3 = _interopRequireDefault(_Header2);
 
 	exports.Header = _Header3['default'];
 
-	var _NextMonth2 = __webpack_require__(11);
+	var _NextMonth2 = __webpack_require__(12);
 
 	var _NextMonth3 = _interopRequireDefault(_NextMonth2);
 
 	exports.NextMonth = _NextMonth3['default'];
 
-	var _PrevMonth2 = __webpack_require__(10);
+	var _PrevMonth2 = __webpack_require__(11);
 
 	var _PrevMonth3 = _interopRequireDefault(_PrevMonth2);
 
 	exports.PrevMonth = _PrevMonth3['default'];
 
-	var _Weekdays2 = __webpack_require__(12);
+	var _Weekdays2 = __webpack_require__(13);
 
 	var _Weekdays3 = _interopRequireDefault(_Weekdays2);
 
 	exports.Weekdays = _Weekdays3['default'];
 
-	var _Month2 = __webpack_require__(13);
+	var _Month2 = __webpack_require__(14);
 
 	var _Month3 = _interopRequireDefault(_Month2);
 
 	exports.Month = _Month3['default'];
 
-	var _Day2 = __webpack_require__(14);
+	var _Day2 = __webpack_require__(15);
 
 	var _Day3 = _interopRequireDefault(_Day2);
 
 	exports.Day = _Day3['default'];
 
-	var _Calendar2 = __webpack_require__(15);
+	var _Calendar2 = __webpack_require__(16);
 
 	var _Calendar3 = _interopRequireDefault(_Calendar2);
 
 	exports.Calendar = _Calendar3['default'];
 
-/***/ },
-/* 9 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -869,15 +921,15 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _decoratorsWithCalendarProps = __webpack_require__(6);
+	var _decoratorsWithCalendarProps = __webpack_require__(7);
 
 	var _decoratorsWithCalendarProps2 = _interopRequireDefault(_decoratorsWithCalendarProps);
 
-	var _PrevMonth = __webpack_require__(10);
+	var _PrevMonth = __webpack_require__(11);
 
 	var _PrevMonth2 = _interopRequireDefault(_PrevMonth);
 
-	var _NextMonth = __webpack_require__(11);
+	var _NextMonth = __webpack_require__(12);
 
 	var _NextMonth2 = _interopRequireDefault(_NextMonth);
 
@@ -912,9 +964,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports['default'] = (0, _decoratorsWithCalendarProps2['default'])(Header);
 	module.exports = exports['default'];
 
-/***/ },
-/* 10 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -936,11 +988,15 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _decoratorsWithCalendarProps = __webpack_require__(6);
+	var _propTypes = __webpack_require__(3);
+
+	var _propTypes2 = _interopRequireDefault(_propTypes);
+
+	var _decoratorsWithCalendarProps = __webpack_require__(7);
 
 	var _decoratorsWithCalendarProps2 = _interopRequireDefault(_decoratorsWithCalendarProps);
 
-	var _utils = __webpack_require__(5);
+	var _utils = __webpack_require__(6);
 
 	var PrevMonth = (function (_Component) {
 	  _inherits(PrevMonth, _Component);
@@ -994,7 +1050,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }], [{
 	    key: 'propTypes',
 	    value: {
-	      disabled: _react.PropTypes.bool
+	      disabled: _propTypes2['default'].bool
 	    },
 	    enumerable: true
 	  }, {
@@ -1011,9 +1067,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports['default'] = (0, _decoratorsWithCalendarProps2['default'])(PrevMonth);
 	module.exports = exports['default'];
 
-/***/ },
-/* 11 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -1035,11 +1091,15 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _decoratorsWithCalendarProps = __webpack_require__(6);
+	var _propTypes = __webpack_require__(3);
+
+	var _propTypes2 = _interopRequireDefault(_propTypes);
+
+	var _decoratorsWithCalendarProps = __webpack_require__(7);
 
 	var _decoratorsWithCalendarProps2 = _interopRequireDefault(_decoratorsWithCalendarProps);
 
-	var _utils = __webpack_require__(5);
+	var _utils = __webpack_require__(6);
 
 	var NextMonth = (function (_Component) {
 	  _inherits(NextMonth, _Component);
@@ -1093,7 +1153,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }], [{
 	    key: 'propTypes',
 	    value: {
-	      disabled: _react.PropTypes.bool
+	      disabled: _propTypes2['default'].bool
 	    },
 	    enumerable: true
 	  }, {
@@ -1110,9 +1170,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports['default'] = (0, _decoratorsWithCalendarProps2['default'])(NextMonth);
 	module.exports = exports['default'];
 
-/***/ },
-/* 12 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -1126,7 +1186,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _decoratorsWithCalendarProps = __webpack_require__(6);
+	var _decoratorsWithCalendarProps = __webpack_require__(7);
 
 	var _decoratorsWithCalendarProps2 = _interopRequireDefault(_decoratorsWithCalendarProps);
 
@@ -1152,9 +1212,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports['default'] = (0, _decoratorsWithCalendarProps2['default'])(Weekdays);
 	module.exports = exports['default'];
 
-/***/ },
-/* 13 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 14 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -1168,11 +1228,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _decoratorsWithCalendarProps = __webpack_require__(6);
+	var _decoratorsWithCalendarProps = __webpack_require__(7);
 
 	var _decoratorsWithCalendarProps2 = _interopRequireDefault(_decoratorsWithCalendarProps);
 
-	var _Day = __webpack_require__(14);
+	var _Day = __webpack_require__(15);
 
 	var _Day2 = _interopRequireDefault(_Day);
 
@@ -1199,9 +1259,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports['default'] = (0, _decoratorsWithCalendarProps2['default'])(Month);
 	module.exports = exports['default'];
 
-/***/ },
-/* 14 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 15 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -1225,11 +1285,15 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _decoratorsWithDayProps = __webpack_require__(7);
+	var _propTypes = __webpack_require__(3);
+
+	var _propTypes2 = _interopRequireDefault(_propTypes);
+
+	var _decoratorsWithDayProps = __webpack_require__(8);
 
 	var _decoratorsWithDayProps2 = _interopRequireDefault(_decoratorsWithDayProps);
 
-	var _utils = __webpack_require__(5);
+	var _utils = __webpack_require__(6);
 
 	var Day = (function (_Component) {
 	  _inherits(Day, _Component);
@@ -1261,7 +1325,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }], [{
 	    key: 'propTypes',
 	    value: {
-	      day: _react.PropTypes.instanceOf(Date).isRequired
+	      day: _propTypes2['default'].instanceOf(Date).isRequired
 	    },
 	    enumerable: true
 	  }]);
@@ -1272,9 +1336,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports['default'] = (0, _decoratorsWithDayProps2['default'])(Day);
 	module.exports = exports['default'];
 
-/***/ },
-/* 15 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 16 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -1296,23 +1360,27 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _propTypes = __webpack_require__(3);
+
+	var _propTypes2 = _interopRequireDefault(_propTypes);
+
 	var _decoratorsWithCalendar = __webpack_require__(1);
 
 	var _decoratorsWithCalendar2 = _interopRequireDefault(_decoratorsWithCalendar);
 
-	var _decoratorsWithCalendarProps = __webpack_require__(6);
+	var _decoratorsWithCalendarProps = __webpack_require__(7);
 
 	var _decoratorsWithCalendarProps2 = _interopRequireDefault(_decoratorsWithCalendarProps);
 
-	var _Header = __webpack_require__(9);
+	var _Header = __webpack_require__(10);
 
 	var _Header2 = _interopRequireDefault(_Header);
 
-	var _Weekdays = __webpack_require__(12);
+	var _Weekdays = __webpack_require__(13);
 
 	var _Weekdays2 = _interopRequireDefault(_Weekdays);
 
-	var _Month = __webpack_require__(13);
+	var _Month = __webpack_require__(14);
 
 	var _Month2 = _interopRequireDefault(_Month);
 
@@ -1356,8 +1424,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }], [{
 	    key: 'propTypes',
 	    value: {
-	      className: _react.PropTypes.string,
-	      modifiers: _react.PropTypes.array
+	      className: _propTypes2['default'].string,
+	      modifiers: _propTypes2['default'].array
 	    },
 	    enumerable: true
 	  }, {
@@ -1375,9 +1443,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports['default'] = (0, _decoratorsWithCalendar2['default'])((0, _decoratorsWithCalendarProps2['default'])(Calendar), { trimWeekdays: 3 });
 	module.exports = exports['default'];
 
-/***/ },
-/* 16 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 17 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -1398,6 +1466,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	var _react = __webpack_require__(2);
 
 	var _react2 = _interopRequireDefault(_react);
+
+	var _propTypes = __webpack_require__(3);
+
+	var _propTypes2 = _interopRequireDefault(_propTypes);
 
 	var HOURS_IN_DAY = 24;
 	var HOURS_TO_NOON = HOURS_IN_DAY / 2;
@@ -1510,16 +1582,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }], [{
 	    key: 'propTypes',
 	    value: {
-	      minTime: _react.PropTypes.number,
-	      maxTime: _react.PropTypes.number,
-	      interval: _react.PropTypes.number,
-	      separator: _react.PropTypes.string,
-	      pad: _react.PropTypes.bool,
-	      twelveHourClock: _react.PropTypes.bool,
-	      humanize: _react.PropTypes.bool,
-	      humanizeStrings: _react.PropTypes.object,
-	      onTimeSelect: _react.PropTypes.func,
-	      renderTime: _react.PropTypes.func
+	      minTime: _propTypes2['default'].number,
+	      maxTime: _propTypes2['default'].number,
+	      interval: _propTypes2['default'].number,
+	      separator: _propTypes2['default'].string,
+	      pad: _propTypes2['default'].bool,
+	      twelveHourClock: _propTypes2['default'].bool,
+	      humanize: _propTypes2['default'].bool,
+	      humanizeStrings: _propTypes2['default'].object,
+	      onTimeSelect: _propTypes2['default'].func,
+	      renderTime: _propTypes2['default'].func
 	    },
 	    enumerable: true
 	  }, {
@@ -1559,7 +1631,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports['default'] = Times;
 	module.exports = exports['default'];
 
-/***/ }
+/***/ })
 /******/ ])
 });
 ;
